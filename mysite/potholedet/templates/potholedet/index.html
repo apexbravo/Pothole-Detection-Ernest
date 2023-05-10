@@ -1,0 +1,23 @@
+{% extends 'potholedet/base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-primary-gradient">
+  <div class="container pt-4 pt-xl-5">
+      <div class="row pt-5">
+          <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
+              <div class="text-center">
+                  <p class="fw-bold text-success mb-2">Ernesto&nbsp; Pothole Detection</p>
+                  <h1 class="fw-bold">Pothole Detection System</h1>
+              </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+              <div class="position-relative" style="display: flex;flex-wrap: wrap;justify-content: flex-end;">
+                  <div style="position: relative;flex: 0 0 45%;transform: translate3d(-15%, 35%, 0);"><img class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.8" src="{% static 'img/products/potholeimage.jpg' %}"></div>
+                  <div style="position: relative;flex: 0 0 45%;transform: translate3d(-5%, 20%, 0);"><img class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.4" src="{% static 'img/products/workers-placing-new-coating-asphalt-road.jpg' %}"></div>
+                  <div style="position: relative;flex: 0 0 60%;transform: translate3d(0, 0%, 0);"><img class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.25" src="{% static 'img/products/close-up-orange-traffic-cone-road-copy-space.jpg' %}"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+{% endblock %}
