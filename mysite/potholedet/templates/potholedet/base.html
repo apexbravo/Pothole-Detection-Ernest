@@ -20,20 +20,31 @@
                     </svg></span><span>Errnesto</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Pothole Maps</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Video Test</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'potholedet:index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'potholedet:potholemap'%}">Pothole Maps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'potholedet:videotest' %}">Video Test</a></li>
+                    <li class="nav-item"> <a  class="nav-link" href="{% url 'potholedet:result' %}"> Results </a></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="signup.html">About</a>
+                </ul><a class="btn btn-primary shadow" role="button" href="{% url 'potholedet:about' %}">About</a>
             </div>
         </div>
     </nav>
+    <div class="container">
 
     {% block content %} {% endblock %}
-    <footer class="bg-primary-gradient">Apxb08© 2023</footer>
+    </div>
+    <footer>
+        <div class="container text-center bg-primary-gradient">
+            <p>Apxb08© 2023</p>
+        </div>
+    </footer>
+  
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/bold-and-bright.js' %}"></script>
+
+    {% block script %}
+    
+    {% endblock %}
 </body>
 
 </html>

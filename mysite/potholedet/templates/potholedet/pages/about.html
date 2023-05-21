@@ -1,0 +1,30 @@
+{% extends 'potholedet/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6" style="
+      overflow: hidden;
+  ">
+        <img src="{% static 'img/Roadworks Image.jpg' %}" alt="Pothole Detection Software">
+      </div>
+      <div class="col-lg-6">
+        <h2>Pothole Detection Software</h2>
+        <p>The Pothole Detection Software is an innovative solution for identifying and mapping potholes in road surfaces. It utilizes advanced computer vision algorithms to analyze images or videos captured by cameras or drones to detect and locate potholes accurately.</p>
+        <p>The software employs state-of-the-art machine learning techniques, specifically object detection, to identify potholes within the captured images or videos. It can efficiently process large volumes of data and generate real-time insights for road maintenance and repair planning.</p>
+        <p>Key Features:</p>
+        <ul>
+          <li>Accurate detection and location of potholes</li>
+          <li>Support for image and video analysis</li>
+          <li>Real-time monitoring and reporting</li>
+          <li>Heatmap visualization for pothole distribution</li>
+          <li>Data export and integration with other systems</li>
+        </ul>
+        <p>With the Pothole Detection Software, road authorities and maintenance teams can efficiently identify and prioritize pothole repairs, ensuring safer and well-maintained road networks for the community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

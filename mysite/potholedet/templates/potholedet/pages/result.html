@@ -1,0 +1,34 @@
+{% extends 'potholedet/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1>Pothole Detection Result</h1>
+    <div id="video-player">
+        
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the video player div
+        var videoPlayer = document.getElementById("video-player");
+    
+        // Create the video element
+        var videoElement = document.createElement("video");
+        videoElement.controls = true;
+    
+        // Create the source element and set the source URL
+        var sourceElement = document.createElement("source");
+        sourceElement.src = "{% static 'result.mp4' %}"; // Change 'result.mp4' to the correct path of your video file
+    
+        // Append the source element to the video element
+        videoElement.appendChild(sourceElement);
+    
+        // Append the video element to the video player div
+        videoPlayer.appendChild(videoElement);
+    });
+</script>
+{% endblock %}

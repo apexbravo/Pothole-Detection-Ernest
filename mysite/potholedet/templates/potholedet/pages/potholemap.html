@@ -1,0 +1,54 @@
+{% extends 'potholedet/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container py-5">
+      <div class="row mb-4 mb-lg-5">
+          <div class="col-md-8 col-xl-6 text-center mx-auto">
+              <p class="fw-bold text-success mb-2">Local</p>
+              <h3 class="fw-bold">Pothole Maps in Zimbabwe</h3>
+              <div id="map" style="height: 600px; width: 100%;"></div>
+          </div>
+      </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block script %}
+<script src="https://polyfill.io/v3/polyfill.js?features=default"></script>
+<script>
+    function initMap() {
+        var mapOptions = {
+            zoom: 12,
+            center: { lat: -20.157, lng: 28.583 },
+            mapTypeId: 'roadmap',
+            styles: [
+                // Customize the map styling here
+                // You can find different styles from the Google Maps API documentation or other sources
+            ]
+        };
+
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        var heatmapData = [
+            {% for coordinate in coordinates %}
+            new google.maps.LatLng({{ coordinate.0 }}, {{ coordinate.1 }}),
+            {% endfor %}
+        ];
+
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+          data: heatmapData,
+          dissipating: true,
+          map: map
+      });
+      
+
+
+    }
+</script>
+
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGpHozG4LVQn1pzqAbp3d8CtLPv0kqbas&libraries=visualization&callback=initMap">
+    </script>
+{% endblock%}
